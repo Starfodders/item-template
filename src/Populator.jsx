@@ -74,6 +74,7 @@ const Populator = () => {
             <input
               type="text"
               name="name"
+              className="pop-input"
               placeholder="Item Name"
               onChange={(e) => handleInputChange(e)}
             />
@@ -83,7 +84,8 @@ const Populator = () => {
             <input
               type="text"
               name="type"
-              placeholder="Weapon, Armour, Potion"
+              className="pop-input"
+              placeholder="Weapon, Armour, etc"
               onChange={(e) => handleInputChange(e)}
             />
           </div>
@@ -92,6 +94,7 @@ const Populator = () => {
             <input
               type="text"
               name="rarity"
+              className="pop-input"
               placeholder="Common, Legendary"
               onChange={(e) => handleInputChange(e)}
             />
@@ -103,15 +106,18 @@ const Populator = () => {
             <input
               type="text"
               name="tags"
-              placeholder="Light, Versatile, Consumable"
+              className="pop-input"
+              placeholder="Light, Versatile"
               onKeyDown={(e) => updateTag(e)}
             />
           </div>
-          <div className="populate-item">
+        </div>
+        <div className="populate-item">
             <label htmlFor="attune">Attunement</label>
             <input
               type="checkbox"
               name="attune"
+              className="attune-input"
               onChange={() =>
                 setInputFields((prev) => ({
                   ...prev,
@@ -120,41 +126,43 @@ const Populator = () => {
               }
             ></input>
           </div>
-        </div>
         <div className="populate-row">
           <div className="populate-item">
             <label htmlFor="desc">Description</label>
-            <input
+            <textarea
               type="text"
               name="desc"
+              className="desc-input"
               onChange={(e) => updateDesc(e)}
               onKeyDown={(e) => updateDesc(e)}
             />
           </div>
         </div>
-        <div className="populate-row">
+        <div className="populate-row-prop">
           <div className="populate-item">
-            <label htmlFor="name">Properties</label>
-            <button onClick={() => addEffect()}>New Property</button>
+            <label htmlFor="name" id = "prop-label">Properties</label>
+            <button onClick={() => addEffect()} className="prop-btn">New Property</button>
           </div>
           {effectList.length > 0 &&
             effectList.map((effect, index) => {
               return (
                 <div key={index}>
-                  <div>
-                    <label>Property Name</label>
+                  <div className="populate-item">
+                    <label className="prop-label">Property Name</label>
                     <input
                       name="effectName"
                       value={effect.name}
+                      className="prop-input"
                       onChange={(e) => handleEffectChange(e, index)}
                     />
                   </div>
-                  <div>
-                    <label>Property Description</label>
+                  <div className="populate-item">
+                    <label className="prop-label">Property Description</label>
 
-                    <input
+                    <textarea
                       name="effectDesc"
                       value={effect.description}
+                      className="prop-input-desc"
                       onChange={(e) => handleEffectChange(e, index)}
                     />
                   </div>
@@ -171,6 +179,7 @@ const Populator = () => {
                   ["tableRows"]: prev.tableRows + 1,
                 }))
               }
+              className="prop-btn"
             >
               Add Table Row
             </button>
@@ -191,3 +200,4 @@ export default Populator;
 
 //name, tags (separate with space), source, item type, item rarity, attunement toggle, description (separate with enter), add effect (effect title, effect description), add table,
 //if theres an image, toggle class for different format
+

@@ -42,6 +42,15 @@ a {
     text-decoration: none;
 }
 
+input {
+  border: 1px solid rgb(188, 188, 188)
+}
+
+textarea {
+  border: 1px solid rgb(188, 188, 188)
+
+}
+
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -60,19 +69,98 @@ input[type=number] {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 15rem;
+  margin: 0 0 15rem;
+}
+
+.header {
+  margin: 2rem 0 4rem 4rem;
+  width: 100%;
+}
+.header-title {
+  font-size: 4rem;
+  font-weight: 700;
+  padding-bottom: 0.3rem;
+}
+.header-message {
+  font-size: 1.5rem;
+}
+
+.populate-container {
+  background: rgb(254, 252, 243);
+  width: 50%;
+  padding: 2rem;
+  border: 2px solid rgb(188, 188, 188);
+  
+  /* border: 5px solid rgb(188, 188, 188); */
+
+}
+
+.populate-row {
+  display: flex; 
+  gap: 2rem;
+}
+
+.populate-row-prop {
+  display: flex; 
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.populate-item {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+
+.pop-input{
+  width: 100%;
+  padding: 0 0.2rem;
+}
+.desc-input {
+  width: 40rem;
+  padding: 0.3rem 0.3rem 5rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.prop-label {
+  min-width: 200px;
+}
+
+.prop-input{
+  min-width: 70%;
+  max-width: 460px;
+}
+.prop-input-desc {
+  min-width: 70%;
+  max-width: 460px;
+  padding: 0.3rem 0.3rem 1rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.prop-btn {
+  background-color: rgb(140, 129, 81);
+  border: none;
+  border: 2px solid rgb(254, 252, 243);
+  padding: 0.3rem 0.5rem;
+  color: white;
+  font-size: 0.8rem;
+}
+#prop-label {
+  line-height: 170%;
 }
 
 .format-container {
   background: #FAF9F6;
-  border: 5px solid rgb(188, 188, 188);
+  border: 2px solid rgb(188, 188, 188);
   border-radius: 4px;
   width: 50%;
-  /* height: 500px; */
   padding: 2rem;
+  margin-top: 5rem;
 }
 
 .format-top {
@@ -97,6 +185,7 @@ input[type=number] {
 
 .attune {
   padding-bottom: 1rem;
+  color:rgb(129, 129, 129);
 }
 
 .format-tags {
@@ -115,6 +204,7 @@ input[type=number] {
 .format-desc {
   padding-bottom: 1rem;
   line-height: 150%;
+  word-wrap: break-word;
 }
 
 .desc {
@@ -130,11 +220,63 @@ input[type=number] {
   gap: 0.5rem;
   padding: 0.75rem 0;
   border-top: 1px solid rgb(188, 188, 188);
-  /* border-bottom: 1px solid black; */
 }
 
 .effect>:first-child {
   font-weight: 700;
   min-width: 150px;
-  max-width: 150px;
+  word-wrap: break-word;
+  font-style: italic;
+}
+
+.format-table {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgb(129, 129, 129);
+  border-bottom: 1px solid rgb(129, 129, 129);
+  width: 100%;
+  margin-top: 1rem;
+}
+.format-table-header {
+  background: rgb(140, 129, 81);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.table-header {
+  background: transparent;
+  border: none;
+  width: 50%;
+  color:rgb(254, 252, 243);
+  font-size: 1.1rem;
+
+}
+.table-header::placeholder {
+  color: rgba(254, 252, 243, 0.5);
+}
+.table-header:focus {
+  outline: red;
+}
+.table-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(129, 129, 129);
+}
+.table-row:last-child {
+  border-bottom: none;
+}
+.table-cell {
+  width: 50%;
+  border: none;
+  padding: 1rem;
+  min-height: 50px;
+}
+.table-cell:focus {
+  outline: none;
+}
+
+.table-cell:first-child {
+  border-right: 1px solid rgb(129, 129, 129);
+  
 }

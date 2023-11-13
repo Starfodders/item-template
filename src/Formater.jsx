@@ -1,9 +1,9 @@
-// import { useState, useEffect } from "react";
-
+import { useState, useEffect } from "react";
 
 const Formater = ({ data, descPlaceholder, effects, removeTag }) => {
   const { name, type, rarity, attune, tags, desc, tableRows } = data;
 
+  // console.log(tableRows);
   return (
     <div className="format-container">
       <div className="format-top">
@@ -19,7 +19,7 @@ const Formater = ({ data, descPlaceholder, effects, removeTag }) => {
         {tags &&
           tags.length > 0 &&
           tags.map((tag, index) => (
-            <p key={index} className="tag" onClick = {() => removeTag(index)}>
+            <p key={index} className="tag" onClick={() => removeTag(index)}>
               {tag}
             </p>
           ))}
@@ -44,9 +44,22 @@ const Formater = ({ data, descPlaceholder, effects, removeTag }) => {
             </div>
           ))}
       </div>
-      {/* <div className="format-table">
-        {tableRows && tableRows.map((_, index) => <div className="table-container"><div className="table-left"></div><div className="table-left"></div></div>)}
-      </div> */}
+      {tableRows > 0 && (
+        <div className="format-table">
+          {tableRows > 0 && (
+            <div className="format-table-header">
+              <input className="table-header" placeholder="Row Name"></input>
+              <input className="table-header" placeholder="Row Name"></input>
+            </div>
+          )}
+          {Array.from({ length: tableRows }).map((_, index) => (
+            <div key={index} className="table-row">
+              <input className="table-cell"></input>
+              <input className="table-cell"></input>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
